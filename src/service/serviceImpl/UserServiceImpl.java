@@ -26,8 +26,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUserById(Long id, String username, String password, String newPassword) {
-        userDao.updateUserById(id, username, password, newPassword);
+    public void updateUserById(Long id, String username, String newPassword) {
+        userDao.updateUserById(id, username, newPassword);
     }
 
     @Override

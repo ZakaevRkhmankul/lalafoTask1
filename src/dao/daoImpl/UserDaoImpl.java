@@ -29,7 +29,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void updateUserById(Long id, String name, String password, String newPassword) {
+    public void updateUserById(Long id, String name, String newPassword) {
         for (User user : Database.users) {
             if (user.getId().equals(id)) {
                 user.setName(name);
