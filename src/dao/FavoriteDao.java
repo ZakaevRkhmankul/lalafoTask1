@@ -1,7 +1,17 @@
 package dao;
 
+import models.Announcement;
 import models.Favorite;
 
+import java.util.List;
+
 public interface FavoriteDao {
-    public void add(Favorite favorite);
+    String addFavorite(Long userId,Long announcementId);
+
+    String deleteFavorite(Long userId,Long announcementId);
+
+    String updateFavorite(Favorite favorite);
+
+    List<Favorite> getAllFavoriteByUserId(Long userId);
+
 }
