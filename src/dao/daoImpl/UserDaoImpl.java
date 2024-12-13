@@ -10,7 +10,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void addUser(User user) {
-        Database.users.add(user);
+        System.out.println(Database.users.add(user));
     }
 
     @Override
