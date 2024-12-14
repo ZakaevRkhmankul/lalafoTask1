@@ -34,34 +34,54 @@ public class Main {
         while (true) {
             System.out.println("""
                     Choose options:
-                    1.Add a new user,
-                    2.Get all users,
-                    3.Get user by id;
-                    4.
+                    1.User methods
+                    2.Announcement methods
+                    3.Favorite methods
                     """);
-            int choise = new Scanner(System.in).nextInt();
-            switch (choise) {
-                case 1-> {
-                    System.out.print("Enter username: ");
-                    String username = new Scanner(System.in).nextLine();
-                    System.out.print("Enter email: ");
-                    String email = new Scanner(System.in).nextLine();
-                    System.out.print("Enter password: ");
-                    String password = new Scanner(System.in).nextLine();
-                    System.out.print("Enter role: ");
-                    String role = new Scanner(System.in).nextLine();
-                    if (role.equals("admin")) {
-                        userService.addUser(new User(GeneratorId.getUserId(), username, email, password, Role.ADMIN));
-                    } else if (role.equals("user")) {
-                        userService.addUser(new User(GeneratorId.getUserId(), username, email, password, Role.USER));
-                    }else if (role.equals("vendor")) {
-                        userService.addUser(new User(GeneratorId.getUserId(),username,email,password,Role.VENDOR));
-                    }else {
-                        System.out.println("incorect ");
+            int choose = new Scanner(System.in).nextInt();
+            switch (choose) {
+                case 1 -> {
+                    while (true) {
+                        System.out.println("""
+                                User methods:
+                                
+                                1.Add a new user,
+                                2.Get all users,
+                                3.Get user by id;
+                                4.
+                                """);
+                        int chooseUser = new Scanner(System.in).nextInt();
+                        switch (chooseUser) {
+                            case 1 -> {
+                                System.out.print("Enter username: ");
+                                String username = new Scanner(System.in).nextLine();
+                                System.out.print("Enter email: ");
+                                String email = new Scanner(System.in).nextLine();
+                                System.out.print("Enter password: ");
+                                String password = new Scanner(System.in).nextLine();
+                                System.out.print("Enter role: ");
+                                String role = new Scanner(System.in).nextLine();
+                                if (role.equals("admin")) {
+                                    userService.addUser(new User(GeneratorId.getUserId(), username, email, password, Role.ADMIN));
+                                } else if (role.equals("user")) {
+                                    userService.addUser(new User(GeneratorId.getUserId(), username, email, password, Role.USER));
+                                } else if (role.equals("vendor")) {
+                                    userService.addUser(new User(GeneratorId.getUserId(), username, email, password, Role.VENDOR));
+                                } else {
+                                    System.out.println("incorect ");
+                                }
+                            }
+                            case 2 -> {
+                                System.out.println("Get all users");
+                                System.out.println(userService.getUsers());
+                            }
+                            case 3 -> {
+                                System.out.println("Write user id");
+                                Long id = new Scanner(System.in).nextLong();
+                                System.out.println(userService.getUser(id));
+                            }
+                        }
                     }
-                }
-                case 2-> {
-                    System.out.println(userService.getUsers());
                 }
             }
         }
