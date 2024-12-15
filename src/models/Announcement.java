@@ -9,6 +9,9 @@ public class Announcement {
 
     public Announcement() {
     }
+    public Announcement(Long id) {
+        this.id = id;
+    }
 
     public Announcement(Long id, String name, String description, int price, String owner) {
         this.id = id;

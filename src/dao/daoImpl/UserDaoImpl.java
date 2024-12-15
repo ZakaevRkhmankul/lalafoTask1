@@ -10,7 +10,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void addUser(User user) {
-        Database.users.add(user);
+        System.out.println(Database.users.add(user));
     }
 
     @Override
@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao {
             if (user.getId().equals(id)) {
                 user.setName(name);
                 user.setPassword(newPassword);
-                break;
+                System.out.println(user);
             }
         }
     }
@@ -43,7 +43,7 @@ public class UserDaoImpl implements UserDao {
     public void deleteUserById(Long id) {
         for (User user : Database.users) {
             if (user.getId().equals(id)) {
-                Database.users.remove(user);
+                System.out.println(Database.users.remove(user));
             }
         }
     }

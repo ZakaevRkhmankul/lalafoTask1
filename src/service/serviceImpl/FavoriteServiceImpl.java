@@ -8,24 +8,41 @@ import service.FavoriteService;
 import java.util.List;
 
 public class FavoriteServiceImpl implements FavoriteService {
+
     FavoriteDao favoriteDao = new FavoriteDaoImpl();
+
     @Override
-    public String addFavorite(Long userId, Long announcementId) {
-        return favoriteDao.addFavorite(userId, announcementId);
+    public Favorite addFavorite(Favorite favorite) {
+        return favoriteDao.addFavorite(favorite);
     }
 
     @Override
-    public String deleteFavorite(Long userId, Long announcementId) {
-        return "";
+    public Favorite getFavoriteById(Long id) {
+        return favoriteDao.getFavoriteById(id);
     }
 
     @Override
-    public String updateFavorite(Favorite favorite) {
-        return "";
+    public List<Favorite> getAllFavorite() {
+        return favoriteDao.getAllFavorite();
     }
 
     @Override
-    public List<Favorite> getAllFavoriteByUserId(Long userId) {
-        return List.of();
+    public Favorite updateFavorite(Favorite favorite) {
+        return favoriteDao.updateFavorite(favorite);
+    }
+
+    @Override
+    public void deleteFavorite(Long id) {
+        favoriteDao.deleteFavorite(id);
+    }
+
+    @Override
+    public List<Favorite> getFavoritesByUserId(Long userId) {
+        return favoriteDao.getFavoritesByUserId(userId);
+    }
+
+    @Override
+    public void clearFavorites() {
+        favoriteDao.clearFavorites();
     }
 }

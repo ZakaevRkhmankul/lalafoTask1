@@ -17,7 +17,7 @@ public class AnnouncementDaoImpl implements AnnoumcementDao {
 
     @Override
     public Announcement getById(Long id) {
-        for (Announcement announcement : Database. announcements) {
+        for (Announcement announcement : Database.announcements) {
             if (announcement.getId().equals(id)) {
                 return announcement;
             }
@@ -35,8 +35,8 @@ public class AnnouncementDaoImpl implements AnnoumcementDao {
         for (Announcement announcement1 : announcements) {
             if (announcement1.getId().equals(id)) {
                 announcement1.setName(announcement.getName());
-            }}
-
+            }
+        }
         return "Successfully updated";
     }
 
@@ -45,12 +45,12 @@ public class AnnouncementDaoImpl implements AnnoumcementDao {
         for (int i = 0; i < announcements.size(); i++) {
             if (announcements.get(i).getId().equals(id)) {
                 announcements.remove(i);
-                System.out.println(" ийгилуктуу очурулду: " + id);
-                return;
+                System.out.println(" ийгилуктуу очурулду: ");
+                break;
             }
         }
         System.out.println(" табылган жок");
     }
 
-    }
+}
 
