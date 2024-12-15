@@ -6,12 +6,18 @@ import models.Favorite;
 import java.util.List;
 
 public interface FavoriteDao {
-    String addFavorite(Long userId,Long announcementId);
+    Favorite addFavorite(Favorite favorite);
 
-    String deleteFavorite(Long userId,Long announcementId);
+    Favorite getFavoriteById(Long id);
 
-    String updateFavorite(Favorite favorite);
+    List<Favorite> getAllFavorite();
 
-    List<Favorite> getAllFavoriteByUserId(Long userId);
+    Favorite updateFavorite(Favorite favorite);
+
+    void deleteFavorite(Long id);
+
+    List<Favorite> getFavoritesByUserId(Long userId);
+
+    void clearFavorites();
 
 }

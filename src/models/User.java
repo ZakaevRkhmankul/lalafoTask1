@@ -11,6 +11,9 @@ public class User {
 
     public User() {
     }
+    public User(Long id){
+        this.id = id;
+    }
 
     public User(Long id, String name, String email, String password, Role role) {
         this.id = id;

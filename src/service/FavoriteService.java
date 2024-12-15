@@ -5,11 +5,19 @@ import models.Favorite;
 import java.util.List;
 
 public interface FavoriteService {
-    String addFavorite(Long userId,Long announcementId);
 
-    String deleteFavorite(Long userId,Long announcementId);
+    Favorite addFavorite(Favorite favorite);
 
-    String updateFavorite(Favorite favorite);
+    Favorite getFavoriteById(Long id);
 
-    List<Favorite> getAllFavoriteByUserId(Long userId);
+    List<Favorite> getAllFavorite();
+
+    Favorite updateFavorite(Favorite favorite);
+
+    void deleteFavorite(Long id);
+
+    List<Favorite> getFavoritesByUserId(Long userId);
+
+    void clearFavorites();
+
 }
